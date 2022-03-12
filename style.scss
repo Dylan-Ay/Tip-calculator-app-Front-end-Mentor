@@ -1,0 +1,183 @@
+// <------- Import RFS ------->
+@import "node_modules/rfs/scss.scss";
+
+// Colors
+$strong-cyan: hsl(172, 67%, 45%);//Strong cyan
+$very-dark-cyan: hsl(183, 100%, 15%);//Very dark cyan
+$dark-grayish-cyan: hsl(186, 14%, 43%);//Dark grayish cyan
+$grayish-cyan: hsl(184, 14%, 56%);//Grayish cyan
+$background-calculator-color: hsl(0, 0%, 100%);//White
+$background-page-color: hsl(185, 41%, 84%);//Light grayish cyan
+$very-light-grayish: hsl(189, 41%, 97%);//Very light grayish cyan
+
+//Typography
+@mixin font-size-input{
+    @include font-size(24px);
+}
+
+// Font 
+$primary-font: 'Space Mono', monospace;
+$primary-font-weight: 700;
+
+//Others
+$main-radius: 5px;
+$label-margin: 5px;
+// Enlève les flèches "monter, descendre" du champ "number"
+.no-arrow {
+    -moz-appearance: textfield;
+  }
+.no-arrow::-webkit-inner-spin-button {
+    display: none;
+}
+.no-arrow::-webkit-outer-spin-button,
+.no-arrow::-webkit-inner-spin-button {
+-webkit-appearance: none;
+margin: 0   ;
+}
+@mixin focus-input-color {
+    background-color: unset;
+    outline: $strong-cyan auto 1px;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: $primary-font;
+    font-weight: $primary-font-weight;
+}
+
+body{
+    background-color: $background-page-color;
+}
+
+main{
+    background-color: $background-calculator-color;
+    border-radius: 10px;
+    .container{
+        padding: 25px;
+        width: 95%;
+        margin: auto;
+        label{
+            color: $dark-grayish-cyan;
+        }
+        #bill, #number-of-people{
+            margin-top: $label-margin;
+            &:focus-visible{
+                @include focus-input-color();
+            }
+        }
+    }
+    .icon-inside{
+        position: relative;
+    }
+    img{
+        position: absolute;
+        left: 15px;
+        top: 23px;
+    }
+    .select-tip-title{
+        display: block;
+        margin-top: 25px;
+        margin-bottom: 10px;
+        color: $dark-grayish-cyan;
+    }
+    .button-display{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        row-gap: 1rem;
+        margin-bottom: 25px;
+        button, input{
+            padding: 7px 10px;
+            width: 143px;
+            border-radius: $main-radius;
+            border: unset;
+            color: $very-light-grayish;
+            @include font-size-input();
+            cursor: pointer;
+            &:focus, :focus-visible{ // A mettre en JS
+                background-color: $strong-cyan;
+                color: $very-dark-cyan;
+            }       
+            &::placeholder{
+                text-align: center;
+            }
+            @media screen and (min-width: 768px){
+                &:hover{
+                    background-color: $background-page-color;
+                    color: $very-dark-cyan;
+                }
+            }    
+        }
+        .percent-button{
+            background-color: $very-dark-cyan;
+        }
+        #custom{
+            &:focus-visible, &:hover{
+                @include focus-input-color();
+            }  
+        }
+    }
+    #result{
+        background-color: $very-dark-cyan;
+        padding: 35px 20px;
+        border-radius: 10px;
+        margin-top: 25px;
+            #result-content{
+            display: flex;
+            justify-content: space-between;
+            flex-direction: row;
+        }
+        .result-col, .total-col{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        .result-col{
+            width: 50%;
+        }
+        .total-col{
+            width: 35%;
+        }
+        .tip-amount-block{
+            margin-bottom: 25px;
+        }
+        .result-child-title{
+            color: $very-light-grayish;
+        }
+        #total, #total-result{
+            @include font-size(50px);
+            color: $strong-cyan;
+        }
+        .mt-total{
+            margin-top: 25px;
+        }
+        .person{
+            color: $grayish-cyan;
+            flex-direction: column;
+        }
+        #reset-button{
+            width: 100%;
+            display: block;
+            margin: 40px auto 0 auto;
+            padding: 10px;
+            border: unset;
+            @include font-size(20px);
+            border-radius: $main-radius;
+            background-color: $strong-cyan;
+            color: $very-dark-cyan;
+        }
+    }
+}
+
+input{
+    background-color: $very-light-grayish;
+    padding: 10px;
+    border: none;
+    color: $very-dark-cyan;
+    @include font-size-input();
+    text-align: end;
+    border-radius: $main-radius;
+    position: relative;
+    width: 100%;
+}
