@@ -50,13 +50,44 @@ body{
     background-color: $background-page-color;
 }
 
+header{
+    h1{
+        text-align: center;
+        padding: 9%;
+        @include font-size(35px);
+        color: $very-dark-cyan;
+        letter-spacing: 0.5rem;
+    }
+}
+
 main{
     background-color: $background-calculator-color;
-    border-radius: 10px;
+    border-radius: 22px;
+    @media screen and (min-width: 600px){
+        width: 90%;
+        margin: 0 auto 18% auto;
+    }
+    @media screen and (min-width: 900px){
+        width: 80%;
+    }
+    @media screen and (min-width: 1200px){
+        width: 65rem;
+    }
     .container{
-        padding: 25px;
-        width: 95%;
+        padding: 35px;
+        width: 100%;
         margin: auto;
+        @media screen and (min-width: 375px) {
+            width: 95%;
+        }
+        @media screen and (min-width: 1000px) {
+            width: 85%;
+        }
+        @media screen and (min-width: 1200px){
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
         label{
             color: $dark-grayish-cyan;
         }
@@ -75,6 +106,11 @@ main{
         left: 15px;
         top: 23px;
     }
+    #select-tip{
+        @media screen and (min-width: 1200px) {
+            width: 50%;
+        }
+    }
     .select-tip-title{
         display: block;
         margin-top: 25px;
@@ -87,15 +123,25 @@ main{
         flex-wrap: wrap;
         row-gap: 1rem;
         margin-bottom: 25px;
+        @media screen and (min-width: 727px) {
+            width: 75%;
+            margin: 25px auto;
+        }
+        @media screen and (min-width: 1200px) {
+            width: 100%;
+        }
         button, input{
             padding: 7px 10px;
-            width: 143px;
+            width: 120px;
             border-radius: $main-radius;
             border: unset;
             color: $very-light-grayish;
             @include font-size-input();
             cursor: pointer;
-            &:focus, :focus-visible{ // A mettre en JS
+            @media screen and (min-width: 375px) {
+                width: 143px;
+            }
+            &:active, :focus-visible{ // A mettre en JS
                 background-color: $strong-cyan;
                 color: $very-dark-cyan;
             }       
@@ -113,6 +159,7 @@ main{
             background-color: $very-dark-cyan;
         }
         #custom{
+            color: $very-dark-cyan;
             &:focus-visible, &:hover{
                 @include focus-input-color();
             }  
@@ -123,10 +170,19 @@ main{
         padding: 35px 20px;
         border-radius: 10px;
         margin-top: 25px;
+        @media screen and (min-width: 800px) {
+            padding: 35px 4%;
+        }
+        @media screen and (min-width: 1200px) {
+            width: 45%;
+        }
             #result-content{
             display: flex;
             justify-content: space-between;
             flex-direction: row;
+            @media screen and (min-width: 1200px){
+                justify-content: space-around;
+            }
         }
         .result-col, .total-col{
             display: flex;
@@ -146,7 +202,7 @@ main{
             color: $very-light-grayish;
         }
         #total, #total-result{
-            @include font-size(50px);
+            @include font-size(45px);
             color: $strong-cyan;
         }
         .mt-total{
@@ -164,8 +220,11 @@ main{
             border: unset;
             @include font-size(20px);
             border-radius: $main-radius;
-            background-color: $strong-cyan;
+            background-color: #26c0ab47;
             color: $very-dark-cyan;
+            @media screen and (min-width: 1200px){
+                margin: 105px auto 0 auto;
+            }
         }
     }
 }

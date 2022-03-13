@@ -24,15 +24,72 @@ body {
   background-color: #c5e4e7;
 }
 
+header h1 {
+  text-align: center;
+  padding: 9%;
+  font-size: calc(1.34375rem + 1.125vw);
+  color: #00494d;
+  letter-spacing: 0.5rem;
+}
+
+@media (min-width: 1200px) {
+  header h1 {
+    font-size: 2.1875rem;
+  }
+}
+
 main {
   background-color: white;
-  border-radius: 10px;
+  border-radius: 22px;
+}
+
+@media screen and (min-width: 600px) {
+  main {
+    width: 90%;
+    margin: 0 auto 18% auto;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main {
+    width: 65rem;
+  }
 }
 
 main .container {
-  padding: 25px;
-  width: 95%;
+  padding: 35px;
+  width: 100%;
   margin: auto;
+}
+
+@media screen and (min-width: 375px) {
+  main .container {
+    width: 95%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main .container {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
 }
 
 main .container label {
@@ -58,6 +115,12 @@ main img {
   top: 23px;
 }
 
+@media screen and (min-width: 1200px) {
+  main #select-tip {
+    width: 50%;
+  }
+}
+
 main .select-tip-title {
   display: block;
   margin-top: 25px;
@@ -78,9 +141,22 @@ main .button-display {
   margin-bottom: 25px;
 }
 
+@media screen and (min-width: 727px) {
+  main .button-display {
+    width: 75%;
+    margin: 25px auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main .button-display {
+    width: 100%;
+  }
+}
+
 main .button-display button, main .button-display input {
   padding: 7px 10px;
-  width: 143px;
+  width: 120px;
   border-radius: 5px;
   border: unset;
   color: #f4fafa;
@@ -94,7 +170,13 @@ main .button-display button, main .button-display input {
   }
 }
 
-main .button-display button:focus, main .button-display button :focus-visible, main .button-display input:focus, main .button-display input :focus-visible {
+@media screen and (min-width: 375px) {
+  main .button-display button, main .button-display input {
+    width: 143px;
+  }
+}
+
+main .button-display button:active, main .button-display button :focus-visible, main .button-display input:active, main .button-display input :focus-visible {
   background-color: #26c0ab;
   color: #00494d;
 }
@@ -126,6 +208,10 @@ main .button-display .percent-button {
   background-color: #00494d;
 }
 
+main .button-display #custom {
+  color: #00494d;
+}
+
 main .button-display #custom:focus-visible, main .button-display #custom:hover {
   background-color: unset;
   outline: #26c0ab auto 1px;
@@ -136,6 +222,18 @@ main #result {
   padding: 35px 20px;
   border-radius: 10px;
   margin-top: 25px;
+}
+
+@media screen and (min-width: 800px) {
+  main #result {
+    padding: 35px 4%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  main #result {
+    width: 45%;
+  }
 }
 
 main #result #result-content {
@@ -149,6 +247,13 @@ main #result #result-content {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+}
+
+@media screen and (min-width: 1200px) {
+  main #result #result-content {
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+  }
 }
 
 main #result .result-col, main #result .total-col {
@@ -180,13 +285,13 @@ main #result .result-child-title {
 }
 
 main #result #total, main #result #total-result {
-  font-size: calc(1.4375rem + 2.25vw);
+  font-size: calc(1.40625rem + 1.875vw);
   color: #26c0ab;
 }
 
 @media (min-width: 1200px) {
   main #result #total, main #result #total-result {
-    font-size: 3.125rem;
+    font-size: 2.8125rem;
   }
 }
 
@@ -210,8 +315,14 @@ main #result #reset-button {
   border: unset;
   font-size: 1.25rem;
   border-radius: 5px;
-  background-color: #26c0ab;
+  background-color: #26c0ab47;
   color: #00494d;
+}
+
+@media screen and (min-width: 1200px) {
+  main #result #reset-button {
+    margin: 105px auto 0 auto;
+  }
 }
 
 input {
