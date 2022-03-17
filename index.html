@@ -20,22 +20,23 @@
         <section id="select-tip">
           <label for="bill" class="bill">Bill</label>
           <div class="icon-inside">
-            <input type="number" name="bill" id="bill" placeholder="0" class="no-arrow insert-input">
+            <input type="number" name="bill" id="bill" placeholder="0" onchange="sanitizeInputBill(this.value)" class="no-arrow insert-input">
             <img src="images/icon-dollar.svg" alt="image dollar">
           </div>
           <span class="select-tip-title">Select Tip %</span>    
           <section class="button-display">
-            <button class="percent-button">5%</button>
-            <button class="percent-button">10%</button>
-            <button class="percent-button">15%</button>
-            <button class="percent-button">25%</button>
-            <button class="percent-button">50%</button>
-            <input type="number" name="custom" id="custom" placeholder="Custom" class="no-arrow insert-input">
+            <button id="five-percent" class="percent-button select-tip-button">5%</button>
+            <button id="ten-percent" class="percent-button select-tip-button">10%</button>
+            <button id="fifteen-percent" class="percent-button select-tip-button">15%</button>
+            <button id="twentyfive-percent" class="percent-button select-tip-button">25%</button>
+            <button id="fifty-percent" class="percent-button select-tip-button">50%</button>
+            <input type="number" name="custom" id="custom" placeholder="Custom" onchange="onChangeCustomPercent(this.value)" class="no-arrow insert-input select-tip-button test">
           </section>
           <section id="number-people">
+            <span class="cantbezero">Can't be zero</span>
             <label for="number-people" class="number-people">Number of People</label>
             <div class="icon-inside">
-              <input type="number" name="number-people" id="number-of-people" placeholder="0" class="no-arrow insert-input">
+              <input type="number" name="number-people" id="number-of-people" placeholder="0" onchange="sanitizeInputPeople(this.value)" class="no-arrow insert-input">
               <img src="images/icon-person.svg" alt="image person">
             </div>
           </section>
@@ -49,7 +50,7 @@
               <span class="person">/ person</span>
             </div>
             <div class="total-col">
-              <span id="total">$0.00</span>
+              <span id="tip-amount">$0.00</span>
               <span id="total-result">$0.00</span>
             </div>
           </div>

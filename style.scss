@@ -53,10 +53,13 @@ body{
 header{
     h1{
         text-align: center;
-        padding: 9%;
+        padding: 5vh;
         @include font-size(35px);
         color: $very-dark-cyan;
         letter-spacing: 0.5rem;
+        @media screen and (min-width: 1200px) {
+            padding: 10vh;
+        }
     }
 }
 
@@ -65,21 +68,18 @@ main{
     border-radius: 22px;
     @media screen and (min-width: 600px){
         width: 90%;
-        margin: 0 auto 18% auto;
+        margin: 0 auto 12% auto;
     }
     @media screen and (min-width: 900px){
         width: 80%;
     }
     @media screen and (min-width: 1200px){
-        width: 65rem;
+        width: 70rem;
     }
     .container{
-        padding: 35px;
+        padding: 40px 20px;
         width: 100%;
         margin: auto;
-        @media screen and (min-width: 375px) {
-            width: 95%;
-        }
         @media screen and (min-width: 1000px) {
             width: 85%;
         }
@@ -87,14 +87,25 @@ main{
             display: flex;
             justify-content: space-between;
             width: 100%;
+            padding: 40px 35px;
         }
         label{
             color: $dark-grayish-cyan;
         }
         #bill, #number-of-people{
             margin-top: $label-margin;
+            cursor: pointer;
             &:focus-visible{
                 @include focus-input-color();
+            }
+        }
+        #number-people{
+            position: relative;
+            .cantbezero{
+                position: absolute;
+                right: 0;
+                opacity: 0;
+                color: darkorange;
             }
         }
     }
@@ -119,7 +130,7 @@ main{
     }
     .button-display{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         row-gap: 1rem;
         margin-bottom: 25px;
@@ -140,23 +151,17 @@ main{
             cursor: pointer;
             @media screen and (min-width: 375px) {
                 width: 143px;
-            }
-            &:active, :focus-visible{ // A mettre en JS
-                background-color: $strong-cyan;
-                color: $very-dark-cyan;
-            }       
+            }   
             &::placeholder{
                 text-align: center;
             }
-            @media screen and (min-width: 768px){
-                &:hover{
-                    background-color: $background-page-color;
-                    color: $very-dark-cyan;
-                }
-            }    
         }
         .percent-button{
             background-color: $very-dark-cyan;
+            &:hover{
+                background-color: $strong-cyan;
+                color: $very-dark-cyan;
+            }    
         }
         #custom{
             color: $very-dark-cyan;
@@ -181,7 +186,7 @@ main{
             justify-content: space-between;
             flex-direction: row;
             @media screen and (min-width: 1200px){
-                justify-content: space-around;
+                justify-content: space-evenly;
             }
         }
         .result-col, .total-col{
@@ -194,6 +199,7 @@ main{
         }
         .total-col{
             width: 35%;
+            margin-right: 10px;
         }
         .tip-amount-block{
             margin-bottom: 25px;
@@ -201,7 +207,7 @@ main{
         .result-child-title{
             color: $very-light-grayish;
         }
-        #total, #total-result{
+        #tip-amount, #total-result{
             @include font-size(45px);
             color: $strong-cyan;
         }
@@ -239,4 +245,32 @@ input{
     border-radius: $main-radius;
     position: relative;
     width: 100%;
+}
+
+//CSS pour le JS"
+.active{
+    background-color: $strong-cyan !important;
+    color: $very-dark-cyan !important;
+}
+#custom{
+    background-color: unset !important;
+}
+
+.outline-active{
+    outline: $strong-cyan auto 1px;
+}
+
+.outline-cantbezero{
+    outline: darkorange 2px solid;
+}
+.cantbezero-active{
+    opacity: 1 !important;
+}
+.resetbutton-active{
+    cursor: pointer;
+    background-color: $strong-cyan !important;
+    opacity: 0.8;
+    &:hover{
+        opacity: 1;
+    }
 }

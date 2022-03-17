@@ -26,7 +26,7 @@ body {
 
 header h1 {
   text-align: center;
-  padding: 9%;
+  padding: 5vh;
   font-size: calc(1.34375rem + 1.125vw);
   color: #00494d;
   letter-spacing: 0.5rem;
@@ -38,6 +38,12 @@ header h1 {
   }
 }
 
+@media screen and (min-width: 1200px) {
+  header h1 {
+    padding: 10vh;
+  }
+}
+
 main {
   background-color: white;
   border-radius: 22px;
@@ -46,7 +52,7 @@ main {
 @media screen and (min-width: 600px) {
   main {
     width: 90%;
-    margin: 0 auto 18% auto;
+    margin: 0 auto 12% auto;
   }
 }
 
@@ -58,20 +64,14 @@ main {
 
 @media screen and (min-width: 1200px) {
   main {
-    width: 65rem;
+    width: 70rem;
   }
 }
 
 main .container {
-  padding: 35px;
+  padding: 40px 20px;
   width: 100%;
   margin: auto;
-}
-
-@media screen and (min-width: 375px) {
-  main .container {
-    width: 95%;
-  }
 }
 
 @media screen and (min-width: 1000px) {
@@ -89,6 +89,7 @@ main .container {
         -ms-flex-pack: justify;
             justify-content: space-between;
     width: 100%;
+    padding: 40px 35px;
   }
 }
 
@@ -98,11 +99,23 @@ main .container label {
 
 main .container #bill, main .container #number-of-people {
   margin-top: 5px;
+  cursor: pointer;
 }
 
 main .container #bill:focus-visible, main .container #number-of-people:focus-visible {
   background-color: unset;
   outline: #26c0ab auto 1px;
+}
+
+main .container #number-people {
+  position: relative;
+}
+
+main .container #number-people .cantbezero {
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  color: darkorange;
 }
 
 main .icon-inside {
@@ -132,9 +145,9 @@ main .button-display {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   row-gap: 1rem;
@@ -176,11 +189,6 @@ main .button-display button, main .button-display input {
   }
 }
 
-main .button-display button:active, main .button-display button :focus-visible, main .button-display input:active, main .button-display input :focus-visible {
-  background-color: #26c0ab;
-  color: #00494d;
-}
-
 main .button-display button::-webkit-input-placeholder, main .button-display input::-webkit-input-placeholder {
   text-align: center;
 }
@@ -197,15 +205,13 @@ main .button-display button::placeholder, main .button-display input::placeholde
   text-align: center;
 }
 
-@media screen and (min-width: 768px) {
-  main .button-display button:hover, main .button-display input:hover {
-    background-color: #c5e4e7;
-    color: #00494d;
-  }
-}
-
 main .button-display .percent-button {
   background-color: #00494d;
+}
+
+main .button-display .percent-button:hover {
+  background-color: #26c0ab;
+  color: #00494d;
 }
 
 main .button-display #custom {
@@ -251,8 +257,9 @@ main #result #result-content {
 
 @media screen and (min-width: 1200px) {
   main #result #result-content {
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
   }
 }
 
@@ -274,6 +281,7 @@ main #result .result-col {
 
 main #result .total-col {
   width: 35%;
+  margin-right: 10px;
 }
 
 main #result .tip-amount-block {
@@ -284,13 +292,13 @@ main #result .result-child-title {
   color: #f4fafa;
 }
 
-main #result #total, main #result #total-result {
+main #result #tip-amount, main #result #total-result {
   font-size: calc(1.40625rem + 1.875vw);
   color: #26c0ab;
 }
 
 @media (min-width: 1200px) {
-  main #result #total, main #result #total-result {
+  main #result #tip-amount, main #result #total-result {
     font-size: 2.8125rem;
   }
 }
@@ -341,5 +349,36 @@ input {
   input {
     font-size: 1.5rem;
   }
+}
+
+.active {
+  background-color: #26c0ab !important;
+  color: #00494d !important;
+}
+
+#custom {
+  background-color: unset !important;
+}
+
+.outline-active {
+  outline: #26c0ab auto 1px;
+}
+
+.outline-cantbezero {
+  outline: darkorange 2px solid;
+}
+
+.cantbezero-active {
+  opacity: 1 !important;
+}
+
+.resetbutton-active {
+  cursor: pointer;
+  background-color: #26c0ab !important;
+  opacity: 0.8;
+}
+
+.resetbutton-active:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */
