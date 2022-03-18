@@ -68,7 +68,7 @@ main{
     border-radius: 22px;
     @media screen and (min-width: 600px){
         width: 90%;
-        margin: 0 auto 12% auto;
+        margin: 0 auto 10% auto;
     }
     @media screen and (min-width: 900px){
         width: 80%;
@@ -247,6 +247,25 @@ input{
     width: 100%;
 }
 
+
+footer{
+    text-align: center;
+    & a{
+        display: block;
+        padding: 20px 0;
+        width: 20rem;
+        margin: auto;
+        text-decoration: none;
+        transform: scaleX(1);
+        transition: linear 0.2s;
+        color: black;
+        font-weight: 500;
+        &:hover{
+            font-weight: 600;
+            transform: scaleX(1.1);
+        }
+    }
+}
 //CSS pour le JS"
 .active{
     background-color: $strong-cyan !important;
