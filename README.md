@@ -18,9 +18,9 @@ The functionalities are :
 - You can select percentages which are already defined or you can select your personnal percentage tip
 
 Stacks used :
+- JavaScript
 - HTML5
 - CSS3
-- JavaScript
 - Sass
 
 **Don't hesitate to contact me for further informations!** 🚀
