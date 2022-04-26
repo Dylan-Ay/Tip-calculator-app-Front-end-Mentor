@@ -1,4 +1,4 @@
-# Frontend Mentor - Tip calculator app
+# Frontend Project - Tip calculator app
 
 ![Design preview for the Tip calculator app coding challenge](./design/desktop-preview.jpg)
 
@@ -6,22 +6,21 @@
 
 Thanks for checking out this front-end coding challenge.
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
-
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+The challenge comes from [Frontend Mentor](https://www.frontendmentor.io), you can find challenges to make that help you to improve your coding skills by building realistic projects.
 
 ## The challenge
 
-Your challenge is to build out this tip calculator app and get it looking as close to the design as possible.
+The challenge was to build out this tip calculator app and get it looking as close to the design as possible.
 
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
+The functionalities are :
+- Calculate the tip amount per person
+- Calculate the total tip amount according to all the persons's tips
+- You can select percentages which are already defined or you can select your personnal percentage tip
 
-Your users should be able to:
+Stacks used :
+- HTML5
+- CSS3
+- JavaScript
+- Sass
 
-- View the optimal layout for the app depending on their device's screen size
-- See hover states for all interactive elements on the page
-- Calculate the correct tip and total cost of the bill per person
-
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
-
-**Have fun building!** 🚀
+**Don't hesitate to contact me for further informations!** 🚀
